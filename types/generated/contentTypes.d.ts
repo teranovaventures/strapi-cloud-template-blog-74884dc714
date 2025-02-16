@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
+    description: '';
     displayName: 'Event';
     pluralName: 'events';
     singularName: 'event';
@@ -391,6 +392,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     event_status: Schema.Attribute.Enumeration<
       ['Pending', 'Active', 'Completed']
     >;
+    grades: Schema.Attribute.String;
     groupAttached: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
